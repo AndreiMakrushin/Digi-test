@@ -1,11 +1,27 @@
 <script setup>
-import { ref } from "vue";
-import Button from "../buttons/Button.vue";
-import Logo from "../Header/Header-components/Logo/Logo.vue";
-import Search from "../Header/Header-components/Search-panel/Search.vue";
-import Navigation from "./Header-components/navigation/Navigation.vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import Button from "../ui/buttons/ButtonCatalog.vue";
+import ButtonMobile from "../ui/buttons/ButtonMobile.vue";
+import Logo from "../ui/Logo/Logo.vue";
+import Search from "../ui/Search-panel/Search.vue";
+import MobileSearch from "../ui/Search-panel/MobileSearch.vue";
+import Navigation from "../ui/navigation/Navigation.vue";
 
 const input = ref("");
+const mobile = ref(false);
+
+const handleResize = () => {
+  mobile.value = window.innerWidth < 768;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", handleResize);
+});
+handleResize();
 </script>
 <template>
   <div class="header">
@@ -15,12 +31,17 @@ const input = ref("");
     </div>
     <div class="search">
       <Search
+        v-if="!mobile"
         type="text"
         placeholder="Поиск по 100 000 товаров "
         v-model="input"
       />
-      <div class="mobile-button">
-        <Button text="Поиск" />
+      <div class="mobile-search" v-else>
+        <div class="search-btn">
+          <MobileSearch type="text" placeholder="Запрос" v-model="input" />
+          <ButtonMobile />
+        </div>
+        <div class="line"></div>
       </div>
     </div>
     <div class="navigation">
@@ -45,21 +66,35 @@ const input = ref("");
   margin: 0px 20px;
   flex-grow: 1;
   display: flex;
+  align-items: center;
+}
+.search-btn{
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  width: 100%;
   flex-direction: row;
 }
-.search .mobile-button{
-  display: none;
+.mobile-search {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
 }
+
 @media (max-width: 768px) {
+  .line {
+    right: 0;
+    border: 1px solid #d5d5d5;
+    width: 90%;
+  }
   .logo {
     display: none;
   }
   .navigation {
     display: none;
   }
-  .search .mobile-button{
-    display: block;
-  }
+
   .search {
     gap: 10px;
   }

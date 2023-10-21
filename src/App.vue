@@ -47,6 +47,7 @@ import ProductsMainContainer from "./components/product/ProductsMainContainer.vu
     display: none;
   }
   .container {
+    max-width: 680px;
     margin: 0px 16px 36px 16px;
   }
 }

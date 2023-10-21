@@ -1,5 +1,6 @@
 <script setup>
 import CardProduct from './productContainerComponents/CardProduct.vue';
+
 </script>
 
 <template>
