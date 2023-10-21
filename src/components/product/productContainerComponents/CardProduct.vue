@@ -56,9 +56,10 @@
 .hit{
     margin-left: 12px;
     margin-top: 12px;
+    margin-right: 12px;
     position: relative;
     background-color: #fff;
-    width: 112px;
+    max-width: 112px;
     height: 32px;
     display: flex;
     flex-direction: row;

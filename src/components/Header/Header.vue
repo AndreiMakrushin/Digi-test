@@ -19,6 +19,9 @@ const input = ref("");
         placeholder="Поиск по 100 000 товаров "
         v-model="input"
       />
+      <div class="mobile-button">
+        <Button text="Поиск" />
+      </div>
     </div>
     <div class="navigation">
       <Navigation />
@@ -41,5 +44,24 @@ const input = ref("");
 .search {
   margin: 0px 20px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+.search .mobile-button{
+  display: none;
+}
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+  .search .mobile-button{
+    display: block;
+  }
+  .search {
+    gap: 10px;
+  }
 }
 </style>

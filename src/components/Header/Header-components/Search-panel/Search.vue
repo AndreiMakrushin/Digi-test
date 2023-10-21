@@ -42,9 +42,6 @@ const props = defineProps({
 input{
   width: 100%;
 }
-input::marker {
-    content: "\2660";
-}
 .search-input {
   display: flex;
 

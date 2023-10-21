@@ -28,11 +28,11 @@ import ProductsMainContainer from "./components/product/ProductsMainContainer.vu
 }
 .container {
   gap: 24px;
-  padding: 0px 100px 36px 100px;
+  margin: 0px 100px 36px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1920px;
+  width: 1720px;
 }
 .content-container{
   display: flex;
@@ -42,4 +42,13 @@ import ProductsMainContainer from "./components/product/ProductsMainContainer.vu
 .sidebar{
   width: 280px;
 }
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .container {
+    margin: 0px 16px 36px 16px;
+  }
+}
+
 </style>

@@ -24,6 +24,10 @@ import CardProduct from './productContainerComponents/CardProduct.vue';
     gap: 24px;
     grid-template-columns: repeat(4, 1fr);
 }
-
+@media (max-width: 768px) {
+    .Products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 </style>
