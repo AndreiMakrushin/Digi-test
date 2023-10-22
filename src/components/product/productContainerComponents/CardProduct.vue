@@ -3,38 +3,35 @@ import ButtonCard from "@/components/ui/buttons/ButtonCard.vue";
 </script>
 
 <template>
-
-    <div class="card">
-      <div class="header">
-        <div class="hit">
-          <h1>Хит продаж</h1>
-          <img src="@/images/fire.png" alt="" />
-        </div>
-        <div class="kubik">
-          <img src="@/images/kubik.png" alt="" />
-        </div>
-        <div class="sale">
-          <span>25%</span>
-        </div>
+  <div class="card">
+    <div class="header">
+      <div class="hit">
+        <h1>Хит продаж</h1>
+        <img src="@/images/fire.png" alt="" />
       </div>
-      <div class="brand">
-        <h1>Бренд</h1>
-        <p>
-          Полное название товара в несколько строк для вида с обрывом в конце...
-        </p>
+      <div class="kubik">
+        <img src="@/images/kubik.png" alt="" />
       </div>
-
-      <div class="price">
-        <span class="current-price">5 990 ₽</span>
-        <span class="old-price">5 990 ₽</span>
+      <div class="sale">
+        <span>25%</span>
       </div>
-      <ButtonCard />
     </div>
-  
+    <div class="brand">
+      <h1>Бренд</h1>
+      <p>
+        Полное название товара в несколько строк для вида с обрывом в конце...
+      </p>
+    </div>
+
+    <div class="price">
+      <span class="current-price">5 990 ₽</span>
+      <span class="old-price">5 990 ₽</span>
+    </div>
+    <ButtonCard />
+  </div>
 </template>
 
 <style scoped>
-
 .card {
   max-width: 333px;
   display: flex;

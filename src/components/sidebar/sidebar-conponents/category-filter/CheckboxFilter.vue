@@ -1,5 +1,5 @@
 <script setup>
-  import CheckboxConteiner from './CheckboxConteiner.vue';
+  import CheckboxConteiner from '../../../ui/sidebar/CheckboxConteiner.vue';
 </script>
 <template>
   <div class="filter-container">

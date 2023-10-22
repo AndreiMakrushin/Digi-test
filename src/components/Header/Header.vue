@@ -96,6 +96,7 @@ handleResize();
   }
 
   .search {
+    margin: 0;
     gap: 10px;
   }
 }

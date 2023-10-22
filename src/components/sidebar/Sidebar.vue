@@ -1,5 +1,5 @@
 <script setup>
-import CategoryFilter from "./sidebar-conponents/category-filter/CategoryFilter.vue";
+import CategoryFilter from "../ui/sidebar/CategoryFilter.vue";
 import PriceFilter from "./sidebar-conponents/category-filter/PriceFilter.vue";
 import CheckboxFilter from './sidebar-conponents/category-filter/CheckboxFilter.vue';
 import SizeFilter from "./sidebar-conponents/category-filter/SizeFilter.vue";
